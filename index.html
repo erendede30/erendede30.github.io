@@ -30,14 +30,15 @@
 
         <section class="cv-section">
             <h2 data-tr="Hakkımda" data-en="Summary">Hakkımda</h2>
-            <p data-tr="İlişkisel veri tabanı mimarisi, veri bütünlüğü (ACID) ve yüksek eşzamanlılık (concurrency) kontrolü üzerine odaklanan Yönetim Bilişim Sistemleri lisans öğrencisi. PostgreSQL, PL/pgSQL ve Python (Flask) teknolojileriyle güvenli, ölçeklenebilir arka uç (backend) sistemleri geliştirmektedir."
-               data-en="Management Information Systems undergraduate focused on relational database architecture, ACID data integrity, and concurrency control. Experienced in building resilient backend systems using PostgreSQL, PL/pgSQL, and Python (Flask).">
-               İlişkisel veri tabanı mimarisi, veri bütünlüğü (ACID) ve yüksek eşzamanlılık (concurrency) kontrolü üzerine odaklanan Yönetim Bilişim Sistemleri lisans öğrencisi. PostgreSQL, PL/pgSQL ve Python (Flask) teknolojileriyle güvenli, ölçeklenebilir arka uç (backend) sistemleri geliştirmektedir.
+            <p data-tr="İlişkisel veri tabanı mimarisi, veri bütünlüğü (ACID), yüksek eşzamanlılık kontrolü ve analitik veri ambarı (ETL) sistemleri üzerine odaklanan Yönetim Bilişim Sistemleri lisans öğrencisi. PostgreSQL, PL/pgSQL ve Python teknolojileriyle güvenli ve ölçeklenebilir arka uç (backend) çözümleri geliştirmektedir."
+               data-en="Management Information Systems undergraduate focused on relational database architecture, ACID data integrity, concurrency control, and analytical data warehousing (ETL). Experienced in building resilient backend solutions with PostgreSQL, PL/pgSQL, and Python.">
+               İlişkisel veri tabanı mimarisi, veri bütünlüğü (ACID), yüksek eşzamanlılık kontrolü ve analitik veri ambarı (ETL) sistemleri üzerine odaklanan Yönetim Bilişim Sistemleri lisans öğrencisi. PostgreSQL, PL/pgSQL ve Python teknolojileriyle güvenli ve ölçeklenebilir arka uç (backend) çözümleri geliştirmektedir.
             </p>
         </section>
 
         <section class="cv-section">
-            <h2 data-tr="Öne Çıkan Proje" data-en="Featured Project">Öne Çıkan Proje</h2>
+            <h2 data-tr="Projeler" data-en="Projects">Projeler</h2>
+
             <div class="project-item">
                 <div class="project-header">
                     <h3 data-tr="LedgerFlow — Çift Taraflı Cüzdan ve Para Transfer Motoru"
@@ -46,7 +47,7 @@
                     </h3>
                     <a href="https://github.com/erendede30/ledgerflow-postgres" target="_blank" class="repo-link">GitHub Repo ↗</a>
                 </div>
-                <p class="tech-stack">PostgreSQL • PL/pgSQL • Python (Flask) • REST API • JSONB</p>
+                <p class="tech-stack">PostgreSQL • PL/pgSQL • Python (Flask) • Concurrency Control • JSONB</p>
                 <ul>
                     <li data-tr="Çift taraflı muhasebe (double-entry bookkeeping) mimarisine dayalı ilişkisel veri tabanı şeması tasarlayarak finansal tutarlılığı CHECK (balance >= 0), UNIQUE ve ON DELETE RESTRICT kısıtlamalarıyla veri tabanı katmanında garanti altına aldı."
                         data-en="Designed a relational database schema based on double-entry bookkeeping principles, enforcing financial integrity at the database layer via CHECK (balance >= 0), UNIQUE, and ON DELETE RESTRICT constraints.">
@@ -56,13 +57,34 @@
                         data-en="Implemented row-level locking (SELECT ... FOR UPDATE) and deterministic ID-ordered locking within Python Flask endpoints to prevent race conditions and deadlocks during concurrent transfers.">
                         Eşzamanlı para transferlerinde yarış durumlarını (race condition) ve kilitlenmeleri (deadlock) önlemek amacıyla SELECT ... FOR UPDATE satır kilitleme ve artan ID sırasıyla kilitleme algoritması geliştirdi.
                     </li>
-                    <li data-tr="Cüzdan bakiyelerindeki tüm değişimleri eski ve yeni değerleriyle birlikte değiştirilemez JSONB formatında kaydeden otomatik PL/pgSQL denetim tetikleyicileri (audit triggers) kurguladı."
-                        data-en="Engineered automated PL/pgSQL audit triggers to capture and log every wallet balance mutation (old/new states and delta) into an immutable JSONB audit trail.">
-                        Cüzdan bakiyelerindeki tüm değişimleri eski ve yeni değerleriyle birlikte değiştirilemez JSONB formatında kaydeden otomatik PL/pgSQL denetim tetikleyicileri (audit triggers) kurguladı.
+                    <li data-tr="Cüzdan bakiyelerindeki tüm değişimleri eski ve yeni değerleriyle birlikte değiştirilemez JSONB formatında kaydeden otomatik PL/pgSQL denetim tetikleyicileri ve çok iş parçacıklı (multi-threaded) stres testleri kurguladı."
+                        data-en="Engineered automated PL/pgSQL audit triggers logging balance mutations into immutable JSONB trails and validated concurrency resilience via multi-threaded Python stress tests.">
+                        Cüzdan bakiyelerindeki tüm değişimleri eski ve yeni değerleriyle birlikte değiştirilemez JSONB formatında kaydeden otomatik PL/pgSQL denetim tetikleyicileri ve çok iş parçacıklı (multi-threaded) stres testleri kurguladı.
                     </li>
-                    <li data-tr="Python concurrent.futures ile oluşturduğu çok iş parçacıklı stres testinde 12 eşzamanlı transfer isteğini simüle ederek sıfır tutarsızlıkla bakiye güvenliğini doğruladı."
-                        data-en="Validated concurrency resilience using a multi-threaded Python test suite (concurrent.futures), simulating 12 simultaneous transfer requests with zero balance anomalies.">
-                        Python concurrent.futures ile oluşturduğu çok iş parçacıklı stres testinde 12 eşzamanlı transfer isteğini simüle ederek sıfır tutarsızlıkla bakiye güvenliğini doğruladı.
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 data-tr="MetricFlow — Otomatik ETL Veri Ambarı ve Analitik API"
+                        data-en="MetricFlow — Automated ETL Data Warehouse & Analytics API">
+                        MetricFlow — Otomatik ETL Veri Ambarı ve Analitik API
+                    </h3>
+                    <a href="https://github.com/erendede30/metricflow-dw" target="_blank" class="repo-link">GitHub Repo ↗</a>
+                </div>
+                <p class="tech-stack">PostgreSQL • Star Schema • Python (Pandas, Flask) • COPY Protocol • Materialized Views</p>
+                <ul>
+                    <li data-tr="Analitik raporlama sorgularını optimize etmek amacıyla merkezi satış olgu tablosu (fact_sales) ile tarih, müşteri ve ürün boyut tablolarından (dimensions) oluşan Yıldız Şema (Star Schema) veri ambarı tasarladı."
+                        data-en="Architected a Star Schema data warehouse consisting of a central sales fact table (fact_sales) and date, customer, and product dimension tables to optimize analytical reporting.">
+                        Analitik raporlama sorgularını optimize etmek amacıyla merkezi satış olgu tablosu (fact_sales) ile tarih, müşteri ve ürün boyut tablolarından (dimensions) oluşan Yıldız Şema (Star Schema) veri ambarı tasarladı.
+                    </li>
+                    <li data-tr="Python Pandas ile 10.000+ satırlık ham veri akışındaki mükerrer ve hatalı kayıtları filtreleyerek PostgreSQL COPY FROM STDIN protokolüyle yüksek hızlı toplu veri aktarımı (ETL) ve süreç loglaması geliştirdi."
+                        data-en="Built a Python Pandas ETL pipeline filtering duplicate and invalid records across 10,000+ raw rows and bulk-loading clean data via PostgreSQL's high-throughput COPY FROM STDIN protocol.">
+                        Python Pandas ile 10.000+ satırlık ham veri akışındaki mükerrer ve hatalı kayıtları filtreleyerek PostgreSQL COPY FROM STDIN protokolüyle yüksek hızlı toplu veri aktarımı (ETL) ve süreç loglaması geliştirdi.
+                    </li>
+                    <li data-tr="Aylık kategori kârlılıklarını Materialized View üzerinde önbellekleyip müşteri segment sıralamalarını Window Functions (RANK, PARTITION BY) ile hesaplayan REST API uç noktaları oluşturdu."
+                        data-en="Exposed REST API endpoints serving pre-aggregated monthly category KPIs via Materialized Views and customer segment rankings using SQL Window Functions (RANK, PARTITION BY).">
+                        Aylık kategori kârlılıklarını Materialized View üzerinde önbellekleyip müşteri segment sıralamalarını Window Functions (RANK, PARTITION BY) ile hesaplayan REST API uç noktaları oluşturdu.
                     </li>
                 </ul>
             </div>
@@ -72,12 +94,12 @@
             <h2 data-tr="Teknik Yetkinlikler" data-en="Technical Skills">Teknik Yetkinlikler</h2>
             <div class="skills-grid">
                 <div class="skill-group">
-                    <strong data-tr="Veri Tabanı & SQL:" data-en="Database & SQL:">Veri Tabanı & SQL:</strong>
-                    <span>PostgreSQL, PL/pgSQL (Triggers & Functions), ACID Transactions, Row-Level Locking, Relational Modeling (ER), JSONB</span>
+                    <strong data-tr="Veri Tabanı & Veri Mühendisliği:" data-en="Database & Data Engineering:">Veri Tabanı & Veri Mühendisliği:</strong>
+                    <span>PostgreSQL, PL/pgSQL (Triggers & Functions), ACID Transactions, Row-Level Locking, Star Schema, ETL Pipelines, Materialized Views, Window Functions, JSONB</span>
                 </div>
                 <div class="skill-group">
                     <strong data-tr="Backend & Programlama:" data-en="Backend & Programming:">Backend & Programlama:</strong>
-                    <span>Python, Flask, RESTful API, SQL, Pandas</span>
+                    <span>Python, Flask, Pandas, RESTful API, SQL</span>
                 </div>
                 <div class="skill-group">
                     <strong data-tr="Web & Geliştirme Araçları:" data-en="Web & Developer Tools:">Web & Geliştirme Araçları:</strong>
