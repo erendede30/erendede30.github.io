@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eren Dede — Backend & Database Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="toolbar no-print">
+        <button id="lang-toggle" class="btn btn-outline" onclick="toggleLanguage()">EN</button>
+        <button class="btn btn-primary" onclick="window.print()" data-tr="PDF Olarak İndir" data-en="Download as PDF">PDF Olarak İndir</button>
+    </div>
+
+    <main class="cv-container">
+        <header class="cv-header">
+            <div>
+                <h1>Eren Dede</h1>
+                <p class="subtitle"
+                   data-tr="Yönetim Bilişim Sistemleri Öğrencisi • Veri Tabanı & Backend Geliştirici"
+                   data-en="Management Information Systems Student • Database & Backend Developer">
+                   Yönetim Bilişim Sistemleri Öğrencisi • Veri Tabanı & Backend Geliştirici
+                </p>
+            </div>
+            <ul class="contact-list">
+                <li>📍 İstanbul, Türkiye</li>
+                <li>🔗 <a href="https://github.com/erendede30" target="_blank">github.com/erendede30</a></li>
+            </ul>
+        </header>
+
+        <section class="cv-section">
+            <h2 data-tr="Hakkımda" data-en="Summary">Hakkımda</h2>
+            <p data-tr="İlişkisel veri tabanı mimarisi, veri bütünlüğü (ACID) ve yüksek eşzamanlılık (concurrency) kontrolü üzerine odaklanan Yönetim Bilişim Sistemleri lisans öğrencisi. PostgreSQL, PL/pgSQL ve Python (Flask) teknolojileriyle güvenli, ölçeklenebilir arka uç (backend) sistemleri geliştirmektedir."
+               data-en="Management Information Systems undergraduate focused on relational database architecture, ACID data integrity, and concurrency control. Experienced in building resilient backend systems using PostgreSQL, PL/pgSQL, and Python (Flask).">
+               İlişkisel veri tabanı mimarisi, veri bütünlüğü (ACID) ve yüksek eşzamanlılık (concurrency) kontrolü üzerine odaklanan Yönetim Bilişim Sistemleri lisans öğrencisi. PostgreSQL, PL/pgSQL ve Python (Flask) teknolojileriyle güvenli, ölçeklenebilir arka uç (backend) sistemleri geliştirmektedir.
+            </p>
+        </section>
+
+        <section class="cv-section">
+            <h2 data-tr="Öne Çıkan Proje" data-en="Featured Project">Öne Çıkan Proje</h2>
+            <div class="project-item">
+                <div class="project-header">
+                    <h3 data-tr="LedgerFlow — Çift Taraflı Cüzdan ve Para Transfer Motoru"
+                        data-en="LedgerFlow — ACID-Compliant Double-Entry Wallet Engine">
+                        LedgerFlow — Çift Taraflı Cüzdan ve Para Transfer Motoru
+                    </h3>
+                    <a href="https://github.com/erendede30/ledgerflow-postgres" target="_blank" class="repo-link">GitHub Repo ↗</a>
+                </div>
+                <p class="tech-stack">PostgreSQL • PL/pgSQL • Python (Flask) • REST API • JSONB</p>
+                <ul>
+                    <li data-tr="Çift taraflı muhasebe (double-entry bookkeeping) mimarisine dayalı ilişkisel veri tabanı şeması tasarlayarak finansal tutarlılığı CHECK (balance >= 0), UNIQUE ve ON DELETE RESTRICT kısıtlamalarıyla veri tabanı katmanında garanti altına aldı."
+                        data-en="Designed a relational database schema based on double-entry bookkeeping principles, enforcing financial integrity at the database layer via CHECK (balance >= 0), UNIQUE, and ON DELETE RESTRICT constraints.">
+                        Çift taraflı muhasebe (double-entry bookkeeping) mimarisine dayalı ilişkisel veri tabanı şeması tasarlayarak finansal tutarlılığı CHECK (balance >= 0), UNIQUE ve ON DELETE RESTRICT kısıtlamalarıyla veri tabanı katmanında garanti altına aldı.
+                    </li>
+                    <li data-tr="Eşzamanlı para transferlerinde yarış durumlarını (race condition) ve kilitlenmeleri (deadlock) önlemek amacıyla SELECT ... FOR UPDATE satır kilitleme ve artan ID sırasıyla kilitleme algoritması geliştirdi."
+                        data-en="Implemented row-level locking (SELECT ... FOR UPDATE) and deterministic ID-ordered locking within Python Flask endpoints to prevent race conditions and deadlocks during concurrent transfers.">
+                        Eşzamanlı para transferlerinde yarış durumlarını (race condition) ve kilitlenmeleri (deadlock) önlemek amacıyla SELECT ... FOR UPDATE satır kilitleme ve artan ID sırasıyla kilitleme algoritması geliştirdi.
+                    </li>
+                    <li data-tr="Cüzdan bakiyelerindeki tüm değişimleri eski ve yeni değerleriyle birlikte değiştirilemez JSONB formatında kaydeden otomatik PL/pgSQL denetim tetikleyicileri (audit triggers) kurguladı."
+                        data-en="Engineered automated PL/pgSQL audit triggers to capture and log every wallet balance mutation (old/new states and delta) into an immutable JSONB audit trail.">
+                        Cüzdan bakiyelerindeki tüm değişimleri eski ve yeni değerleriyle birlikte değiştirilemez JSONB formatında kaydeden otomatik PL/pgSQL denetim tetikleyicileri (audit triggers) kurguladı.
+                    </li>
+                    <li data-tr="Python concurrent.futures ile oluşturduğu çok iş parçacıklı stres testinde 12 eşzamanlı transfer isteğini simüle ederek sıfır tutarsızlıkla bakiye güvenliğini doğruladı."
+                        data-en="Validated concurrency resilience using a multi-threaded Python test suite (concurrent.futures), simulating 12 simultaneous transfer requests with zero balance anomalies.">
+                        Python concurrent.futures ile oluşturduğu çok iş parçacıklı stres testinde 12 eşzamanlı transfer isteğini simüle ederek sıfır tutarsızlıkla bakiye güvenliğini doğruladı.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2 data-tr="Teknik Yetkinlikler" data-en="Technical Skills">Teknik Yetkinlikler</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <strong data-tr="Veri Tabanı & SQL:" data-en="Database & SQL:">Veri Tabanı & SQL:</strong>
+                    <span>PostgreSQL, PL/pgSQL (Triggers & Functions), ACID Transactions, Row-Level Locking, Relational Modeling (ER), JSONB</span>
+                </div>
+                <div class="skill-group">
+                    <strong data-tr="Backend & Programlama:" data-en="Backend & Programming:">Backend & Programlama:</strong>
+                    <span>Python, Flask, RESTful API, SQL, Pandas</span>
+                </div>
+                <div class="skill-group">
+                    <strong data-tr="Web & Geliştirme Araçları:" data-en="Web & Developer Tools:">Web & Geliştirme Araçları:</strong>
+                    <span>HTML5, CSS3, JavaScript, Git, GitHub, PyCharm, VS Code, Linux</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h2 data-tr="Eğitim" data-en="Education">Eğitim</h2>
+            <div class="edu-item">
+                <div>
+                    <strong>Doğuş Üniversitesi</strong>
+                    <p data-tr="Yönetim Bilişim Sistemleri (Lisans)" data-en="B.Sc. in Management Information Systems">Yönetim Bilişim Sistemleri (Lisans)</p>
+                </div>
+                <span class="edu-meta" data-tr="İstanbul, Türkiye" data-en="Istanbul, Turkey">İstanbul, Türkiye</span>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let currentLang = 'tr';
+        function toggleLanguage() {
+            currentLang = currentLang === 'tr' ? 'en' : 'tr';
+            document.documentElement.lang = currentLang;
+            document.getElementById('lang-toggle').textContent = currentLang === 'tr' ? 'EN' : 'TR';
+
+            document.querySelectorAll('[data-tr]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+        }
+    </script>
+</body>
+</html>
